@@ -109,10 +109,19 @@ function App() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { date: '26 April', title: 'Admissions Open 2026-27', tag: 'Enrollment' },
-              { date: '15 May', title: 'Annual Sports Meet', tag: 'Event' },
-              { date: '01 June', title: 'Summer Vacations Start', tag: 'Holiday' }
-            ].map((notice, index) => (
+              <div className="grid md:grid-cols-3 gap-6">
+  {notices.length > 0 ? (
+    notices.map((item, index) => (
+      <div key={index} className="bg-white p-6 rounded-2xl shadow-md border-t-4 border-blue-600 transition-transform hover:scale-105">
+        <span className="text-blue-600 font-bold text-xs uppercase tracking-widest">{item.category}</span>
+        <p className="text-gray-400 text-sm mt-1">{item.date}</p>
+        <h4 className="text-slate-800 font-bold mt-2 leading-snug">{item.message}</h4>
+      </div>
+    ))
+  ) : (
+    <p className="text-slate-400 italic">Loading latest notices...</p>
+  )}
+</div>
               <div key={index} className="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-xl transition-all group">
                 <span className="inline-block px-3 py-1 bg-blue-50 text-blue-600 text-xs font-bold rounded-md mb-4 uppercase tracking-wider">
                   {notice.tag}
