@@ -1,3 +1,4 @@
+import {motion} from 'framer-motion';
 import React, { useState, useEffect } from 'react';
 import { 
   GraduationCap, 
@@ -61,7 +62,13 @@ function App() {
       </nav>
 
       {/* Hero Section */}
-      <header className="relative bg-white pt-16 pb-32 overflow-hidden">
+      <motion.header
+        initial={{opacity:0,y:30}}
+        initial={{opacity:1,y:0}}
+        transition={{duration: 2}}
+        classname="relative bg-white pt-16 pb-32 overflow-hidden"
+        >
+          </motion.div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 px-4 py-2 rounded-full text-sm font-bold mb-6">
