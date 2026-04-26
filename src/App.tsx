@@ -32,13 +32,11 @@ function App() {
               <a href="#about" className="hover:text-blue-600 transition-colors">About</a>
               <a href="#notices" className="hover:text-blue-600 transition-colors">Notices</a>
               <a href="#contact" className="hover:text-blue-600 transition-colors">Contact</a>
-              <a 
-                href="https://wa.me/91XXXXXXXXXX" 
-                className="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-6 py-2.5 rounded-full shadow-lg shadow-green-100 transition-all transform hover:-translate-y-0.5"
-              >
-                <MessageCircle size={20} />
-                Admissions
-              </a>
+              <a
+                href="https://api.whatsapp.com/send/?phone=919534635091&text=Hello%2C+I+am+interested+in+Wisdom+Vidyapeeth+admissions.&type=phone_number&app_absent=0" className="flex items-center gap-2 bg-green-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-md">
+  <MessageCircle size={16} /> {/* If you have icons */}
+  WhatsApp
+</a>
             </div>
           </div>
         </div>
