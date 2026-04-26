@@ -59,9 +59,14 @@ function App() {
               right here in the heart of Begusarai, Bihar.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <button className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-xl font-bold text-lg shadow-xl shadow-blue-200 transition-all">
-                Enroll Now
-              </button>
+              <a 
+  href="https://forms.gle/TxRBXm5yCUvkFeTZ9" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-3 rounded-lg font-semibold transition-all shadow-lg shadow-blue-200 text-center"
+>
+  Enroll Now
+</a>
               <button className="bg-white border-2 border-slate-200 hover:border-blue-600 px-10 py-4 rounded-xl font-bold text-lg transition-all">
                 View Gallery
               </button>
