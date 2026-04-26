@@ -13,6 +13,24 @@ import {
 } from 'lucide-react';
 
 function App() {
+  const [notices, setNotices] = useState([]);
+
+  useEffect(() => {
+    // Replace the link below with your actual Google Sheet CSV link
+    const sheetUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTCdtq2Q-8ptRF8yi08VnYa5cNi8w9HkBwKxYC6aTtOTezrGJqPZO8lFYoCQHEnd9Id7Jh8oKRhhkTq/pub?output=csv";
+    
+    fetch(sheetUrl)
+      .then(res => res.text())
+      .then(csvText => {
+        const rows = csvText.split('\n').slice(1); // Skip the header row
+        const data = rows.map(row => {
+          const [category, date, message] = row.split(',');
+          return { category, date, message };
+        });
+        setNotices(data);
+      })
+      .catch(err => console.error("Error loading notices:", err));
+  }, []);
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900">
       {/* Navigation */}
