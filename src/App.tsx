@@ -25,7 +25,7 @@ function App() {
         const rows = csvText.split('\n').slice(1); // Skip the header row
         const data = rows.map(row => {
           const [category, date, message] = row.split(',');
-          return { tag: columns[0],date: columns[1],title: columns[2] };
+          return { tag: category, date: date, title: message };
         });
         setNotices(data);
       })
@@ -109,7 +109,6 @@ function App() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {notices.map((notice,index) => (
-</div>
               <div key={index} className="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-xl transition-all group">
                 <span className="inline-block px-3 py-1 bg-blue-50 text-blue-600 text-xs font-bold rounded-md mb-4 uppercase tracking-wider">
                   {notice.tag}
